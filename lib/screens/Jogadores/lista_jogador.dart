@@ -18,7 +18,7 @@ class _ListaJogadoresState extends State<ListaJogadores> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(_tituloAppbar),
-            Icon(Icons.person_add),
+            Icon(Icons.people),
           ],
         ),
       ),

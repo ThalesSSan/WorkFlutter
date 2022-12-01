@@ -28,9 +28,6 @@ class Dashboard extends StatelessWidget {
           //     'https://the-eshow.com/madrid19/wp-content/uploads/2017/10/logo-santander.jpg')
           Padding(
             padding: const EdgeInsets.all(8.0),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
             child: InkWell(
               onTap: () {
                 Navigator.of(context).push(
@@ -49,11 +46,11 @@ class Dashboard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Icon(
-                        Icons.people,
+                        Icons.location_city,
                         size: 30,
                       ),
                       Text(
-                        'Teste',
+                        'Lista Cidades',
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
@@ -85,11 +82,11 @@ class Dashboard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Icon(
-                        Icons.people,
+                        Icons.person_add,
                         size: 30,
                       ),
                       Text(
-                        'Teste',
+                        'Lista Equipes',
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
@@ -125,7 +122,7 @@ class Dashboard extends StatelessWidget {
                         size: 30,
                       ),
                       Text(
-                        'Teste',
+                        'Lista Jogadores',
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
@@ -157,11 +154,11 @@ class Dashboard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Icon(
-                        Icons.people,
+                        Icons.games,
                         size: 30,
                       ),
                       Text(
-                        'Teste',
+                        'Lista Jogos',
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
@@ -193,11 +190,11 @@ class Dashboard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Icon(
-                        Icons.people,
+                        Icons.person_add,
                         size: 30,
                       ),
                       Text(
-                        'Teste',
+                        'Lista Tecnicos',
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,

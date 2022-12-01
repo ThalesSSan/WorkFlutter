@@ -8,14 +8,14 @@ class JCBC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'JC Basket Conference',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color(0xff000000),
-            brightness: Brightness.light,
-          ),
-        ));
-    home:
-    Dashboard();
+      title: 'JC Basket Conference',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xff000000),
+          brightness: Brightness.light,
+        ),
+      ),
+      home: Dashboard(),
+    );
   }
 }
