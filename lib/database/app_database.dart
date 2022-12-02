@@ -16,7 +16,7 @@ Future<Database> createDatabase() {
             'equipe_visitante INTEGER PRIMARY KEY, '
             'pontos_casa INTEGER, '
             'pontos_visitantes INTEGER, '
-            'data DATE)');
+            'data TEXT)');
         db.execute('CREATE TABLE equipes('
             'id_equipe INTEGER PRIMARY KEY)');
         db.execute('CREATE TABLE jogador('
