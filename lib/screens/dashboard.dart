@@ -21,8 +21,6 @@ class Dashboard extends StatelessWidget {
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Image.network(
           //     'https://the-eshow.com/madrid19/wp-content/uploads/2017/10/logo-santander.jpg')
@@ -190,7 +188,7 @@ class Dashboard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Icon(
-                        Icons.person_add,
+                        Icons.person,
                         size: 30,
                       ),
                       Text(
