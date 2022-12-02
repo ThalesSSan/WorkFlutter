@@ -36,7 +36,7 @@ class Dashboard extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                width: 150,
+                width: double.maxFinite,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -72,7 +72,7 @@ class Dashboard extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                width: 150,
+                width: double.maxFinite,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -108,7 +108,7 @@ class Dashboard extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                width: 150,
+                width: double.maxFinite,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -144,7 +144,7 @@ class Dashboard extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                width: 150,
+                width: double.maxFinite,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -180,7 +180,7 @@ class Dashboard extends StatelessWidget {
               },
               child: Container(
                 height: 100,
-                width: 150,
+                width: double.maxFinite,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(

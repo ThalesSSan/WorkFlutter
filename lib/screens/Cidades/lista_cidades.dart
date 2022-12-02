@@ -51,17 +51,20 @@ class _ListaCidadesState extends State<ListaCidades> {
           return Text('Error');
         },
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.of(context)
-            .push(
-              MaterialPageRoute(
-                builder: (context) => FormularioCidades(),
-              ),
-            )
-            .then(
-              (value) => setState(() {}),
-            );
-      }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context)
+              .push(
+                MaterialPageRoute(
+                  builder: (context) => FormularioCidades(),
+                ),
+              )
+              .then(
+                (value) => setState(() {}),
+              );
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
