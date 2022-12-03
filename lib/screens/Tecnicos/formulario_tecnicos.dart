@@ -1,30 +1,31 @@
 import 'dart:html';
 
 import 'package:ads6/database/app_database.dart';
-import 'package:ads6/models/cidades.dart';
+import 'package:ads6/models/tecnicos.dart';
 import 'package:flutter/material.dart';
 
-class FormularioCidades extends StatefulWidget {
+class FormularioTecnicos extends StatefulWidget {
   @override
-  State<FormularioCidades> createState() => _FormularioCidades();
+  State<FormularioTecnicos> createState() => _FormularioTecnicos();
 }
 
-class _FormularioCidades extends State<FormularioCidades> {
+class _FormularioTecnicos extends State<FormularioTecnicos> {
   final TextEditingController _idController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _timeController = TextEditingController();
+  final TextEditingController _funcaoController = TextEditingController();
+  final TextEditingController _equipeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    const _tituloAppBar = 'Formulario Cidades';
+    const _tituloAppBar = 'Formulario Tecnicos';
     return Scaffold(
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(_tituloAppBar),
-            Icon(Icons.location_city),
+            Icon(Icons.person_add_alt),
           ],
         ),
       ),
@@ -51,8 +52,17 @@ class _FormularioCidades extends State<FormularioCidades> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextField(
-              controller: _timeController,
-              decoration: InputDecoration(labelText: 'Time'),
+              controller: _funcaoController,
+              decoration: InputDecoration(labelText: 'Funcao'),
+              style: TextStyle(fontSize: 20.0),
+              keyboardType: TextInputType.text,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              controller: _equipeController,
+              decoration: InputDecoration(labelText: 'Equipe'),
               style: TextStyle(fontSize: 20.0),
               keyboardType: TextInputType.number,
             ),
@@ -67,11 +77,13 @@ class _FormularioCidades extends State<FormularioCidades> {
                   style: TextStyle(fontSize: 15.0),
                 ),
                 onPressed: () {
-                  final int? id_cidade = int.tryParse(_idController.text);
+                  final int? id_tecnico = int.tryParse(_idController.text);
                   final String name = _nameController.text;
-                  final int? time = int.tryParse(_timeController.text);
-                  final Cidades newCidade = Cidades(id_cidade!, name, time!);
-                  saveCidade(newCidade).then((id) => Navigator.pop(context));
+                  final String funcao = _funcaoController.text;
+                  final int? equipe = int.tryParse(_equipeController.text);
+                  final Tecnicos newTecnico =
+                      Tecnicos(id_tecnico!, name, funcao, equipe!);
+                  saveTecnico(newTecnico).then((id) => Navigator.pop(context));
                 },
               ),
             ),

@@ -1,4 +1,8 @@
+import 'package:ads6/database/app_database.dart';
+import 'package:ads6/models/tecnicos.dart';
 import 'package:flutter/material.dart';
+
+import 'formulario_tecnicos.dart';
 
 const _tituloAppbar = 'Lista Tecnicos';
 
@@ -24,7 +28,7 @@ class _ListaTecnicosState extends State<ListaTecnicos> {
       ),
       body: FutureBuilder(
         initialData: [],
-        future: findCidade(),
+        future: findTecnicos(),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
@@ -38,13 +42,13 @@ class _ListaTecnicosState extends State<ListaTecnicos> {
             case ConnectionState.active:
               break;
             case ConnectionState.done:
-              final List<Cidades> cidade = snapshot.data as List<Cidades>;
+              final List<Tecnicos> tecnico = snapshot.data as List<Tecnicos>;
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final Cidades cidades = cidade[index];
-                  return _ItemCidades(cidades);
+                  final Tecnicos tecnicos = tecnico[index];
+                  return _ItemTecnicos(tecnicos);
                 },
-                itemCount: cidade.length,
+                itemCount: tecnico.length,
               );
           }
           return Text('Error');
@@ -55,7 +59,7 @@ class _ListaTecnicosState extends State<ListaTecnicos> {
           Navigator.of(context)
               .push(
                 MaterialPageRoute(
-                  builder: (context) => FormularioCidades(),
+                  builder: (context) => FormularioTecnicos(),
                 ),
               )
               .then(
@@ -68,10 +72,10 @@ class _ListaTecnicosState extends State<ListaTecnicos> {
   }
 }
 
-class _ItemCidades extends StatelessWidget {
-  final Cidades cidades;
+class _ItemTecnicos extends StatelessWidget {
+  final Tecnicos tecnicos;
 
-  _ItemCidades(this.cidades);
+  _ItemTecnicos(this.tecnicos);
 
   @override
   Widget build(BuildContext context) {
@@ -79,15 +83,18 @@ class _ItemCidades extends StatelessWidget {
     return Card(
       child: ListTile(
         title: Text(
-          'ID' + cidades.id_cidade.toString(),
+          'ID' + tecnicos.id_tecnico.toString(),
           style: TextStyle(fontSize: 20.0),
         ),
         subtitle: Text(
           'Nome' +
-              cidades.name.toString() +
+              tecnicos.name.toString() +
               '\n' +
-              'Time' +
-              cidades.time.toString(),
+              'Funcao' +
+              tecnicos.funcao.toString() +
+              '\n' +
+              'Equipe' +
+              tecnicos.equipe.toString(),
           style: TextStyle(fontSize: 20.0),
         ),
       ),
